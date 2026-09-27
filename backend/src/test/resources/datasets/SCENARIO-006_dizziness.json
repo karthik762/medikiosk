@@ -1,0 +1,20 @@
+{
+  "scenarioId": "SCENARIO-006",
+  "title": "Lightheadedness and Near Syncope",
+  "source": "Synthea synthetic patient model & MTS-Dialog conversation inspired",
+  "patient": {
+    "age": 68,
+    "gender": "FEMALE",
+    "chiefComplaint": "I've been feeling dizzy for three days and sometimes I feel like I might faint."
+  },
+  "expectedNlp": {
+    "affirmedConcepts": ["DIZZINESS"],
+    "negatedConcepts": [],
+    "durationExtracted": true
+  },
+  "expectedAdaptiveBehavior": {
+    "firstQuestionSafetyCritical": true,
+    "expectedNextQuestionCode": "Q_DIZZINESS_SYNCOPE",
+    "expectedNextCategories": ["RED_FLAG_SCREENING"]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "scenarioId": "SCENARIO-001",
+  "title": "Acute Chest Pain Presentation",
+  "source": "Synthea synthetic patient model & MTS-Dialog conversation inspired",
+  "patient": {
+    "age": 52,
+    "gender": "MALE",
+    "chiefComplaint": "I have severe chest pain and pressure since yesterday morning, but no fever."
+  },
+  "expectedNlp": {
+    "affirmedConcepts": ["CHEST_PAIN"],
+    "negatedConcepts": ["FEVER"],
+    "durationExtracted": true,
+    "severityExtracted": true
+  },
+  "expectedAdaptiveBehavior": {
+    "firstQuestionSafetyCritical": true,
+    "forbiddenQuestions": ["Q_PRIMARY_COMPLAINT", "Q_FEVER_DURATION", "Q_FEVER_CHILLS"],
+    "expectedNextCategories": ["SYMPTOM_SEVERITY", "RED_FLAG_SCREENING"],
+    "expectedTriageScreening": "PRIORITY"
+  }
+}

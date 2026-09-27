@@ -1,0 +1,19 @@
+{
+  "scenarioId": "SCENARIO-004",
+  "title": "Acute Abdominal Cramping",
+  "source": "Synthea synthetic patient model",
+  "patient": {
+    "age": 42,
+    "gender": "MALE",
+    "chiefComplaint": "Severe abdominal pain and cramps since morning. Denies nausea."
+  },
+  "expectedNlp": {
+    "affirmedConcepts": ["ABDOMINAL_PAIN"],
+    "negatedConcepts": ["NAUSEA"],
+    "durationExtracted": true
+  },
+  "expectedAdaptiveBehavior": {
+    "forbiddenQuestions": ["Q_PRIMARY_COMPLAINT"],
+    "expectedNextCategories": ["SYMPTOM_CHARACTERIZATION", "RED_FLAG_SCREENING"]
+  }
+}

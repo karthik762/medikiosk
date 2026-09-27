@@ -1,0 +1,19 @@
+{
+  "scenarioId": "SCENARIO-005",
+  "title": "Persistent Productive Cough",
+  "source": "Synthea synthetic patient model",
+  "patient": {
+    "age": 60,
+    "gender": "MALE",
+    "chiefComplaint": "Persistent cough for 2 weeks. Without fever or chest discomfort."
+  },
+  "expectedNlp": {
+    "affirmedConcepts": ["COUGH"],
+    "negatedConcepts": ["FEVER", "CHEST_PAIN"],
+    "durationExtracted": true
+  },
+  "expectedAdaptiveBehavior": {
+    "forbiddenQuestions": ["Q_PRIMARY_COMPLAINT", "Q_FEVER_DURATION", "Q_CHEST_PAIN_SEVERITY"],
+    "expectedNextCategories": ["SYMPTOM_DURATION", "RED_FLAG_SCREENING"]
+  }
+}

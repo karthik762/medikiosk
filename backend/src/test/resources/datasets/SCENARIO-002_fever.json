@@ -1,0 +1,19 @@
+{
+  "scenarioId": "SCENARIO-002",
+  "title": "Febrile Illness without Respiratory Distress",
+  "source": "Synthea synthetic patient model",
+  "patient": {
+    "age": 28,
+    "gender": "FEMALE",
+    "chiefComplaint": "High fever and body aches for 3 days. No chest pain or breathing problems."
+  },
+  "expectedNlp": {
+    "affirmedConcepts": ["FEVER"],
+    "negatedConcepts": ["CHEST_PAIN", "SHORTNESS_OF_BREATH"],
+    "durationExtracted": true
+  },
+  "expectedAdaptiveBehavior": {
+    "forbiddenQuestions": ["Q_PRIMARY_COMPLAINT", "Q_CHEST_PAIN_SEVERITY", "Q_CHEST_PAIN_RADIATION"],
+    "expectedNextCategories": ["SYMPTOM_DURATION", "ASSOCIATED_SYMPTOMS"]
+  }
+}

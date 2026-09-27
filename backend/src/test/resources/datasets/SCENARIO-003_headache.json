@@ -1,0 +1,19 @@
+{
+  "scenarioId": "SCENARIO-003",
+  "title": "Severe Unilateral Headache",
+  "source": "Synthea synthetic patient model",
+  "patient": {
+    "age": 35,
+    "gender": "FEMALE",
+    "chiefComplaint": "Throbbing migraine headache on the right side for two days. No vomiting."
+  },
+  "expectedNlp": {
+    "affirmedConcepts": ["HEADACHE"],
+    "negatedConcepts": ["VOMITING"],
+    "durationExtracted": true
+  },
+  "expectedAdaptiveBehavior": {
+    "forbiddenQuestions": ["Q_PRIMARY_COMPLAINT", "Q_ABDOMINAL_VOMITING"],
+    "expectedNextCategories": ["SYMPTOM_SEVERITY", "RED_FLAG_SCREENING"]
+  }
+}
